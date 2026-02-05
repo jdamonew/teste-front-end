@@ -6,5 +6,13 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.d.tsx"],
+      "rules": {
+        "@typescript-eslint/no-empty-object-type": "off"
+      }
+    }
+  ]
 }

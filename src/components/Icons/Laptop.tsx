@@ -1,6 +1,6 @@
 import type { IconProps } from './Icons.types'
 
-const Laptop = ({ size = 42, color = 'black' }: IconProps) => {
+export const Laptop = ({ size = 42, color = 'black' }: IconProps) => {
     return (
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -18,5 +18,3 @@ const Laptop = ({ size = 42, color = 'black' }: IconProps) => {
 
     )
 }
-
-export default Laptop

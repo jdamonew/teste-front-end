@@ -1,0 +1,5 @@
+export { NoCash as NoCashIcon } from './NoCash'
+export { Certificate as CertificateIcon } from './Certificate'
+export { Tasks as TasksIcon } from './Tasks'
+export { Laptop as LaptopIcon } from './Laptop'
+export { Telemarketing as TelemarketingIcon } from './Telemarketing'

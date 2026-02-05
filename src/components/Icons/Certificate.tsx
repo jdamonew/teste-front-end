@@ -1,6 +1,6 @@
 import type { IconProps } from './Icons.types'
 
-const Certificate = ({ size = 42, color = 'black' }: IconProps) => {
+export const Certificate = ({ size = 42, color = 'black' }: IconProps) => {
     return (
         <svg
             width={size}
@@ -17,5 +17,3 @@ const Certificate = ({ size = 42, color = 'black' }: IconProps) => {
 
     )
 }
-
-export default Certificate

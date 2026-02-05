@@ -1,6 +1,6 @@
 import type { IconProps } from './Icons.types'
 
-const Tasks = ({ size = 42, color = 'black' }: IconProps) => {
+export const Tasks = ({ size = 42, color = 'black' }: IconProps) => {
     return (
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.54 12.2797L30.8945 14.5039M20.7515 18.9227L24.927 20.0357M20.9597 31.4404L22.6292 31.8867C27.3542 33.1467 29.7167 33.7749 31.5787 32.7057C33.439 31.6382 34.0725 29.2879 35.3377 24.5909L37.128 17.9462C38.395 13.2474 39.0267 10.8989 37.9522 9.04741C36.8777 7.19591 34.517 6.56766 29.7902 5.30941L28.1207 4.86316C23.3957 3.60316 21.0332 2.97491 19.173 4.04416C17.311 5.11166 16.6775 7.46191 15.4105 12.1589L13.622 18.8037C12.355 23.5024 11.7215 25.8509 12.7977 27.7024C13.8722 29.5522 16.2347 30.1822 20.9597 31.4404Z" stroke={color} stroke-width="3" stroke-linecap="round" />
@@ -8,5 +8,3 @@ const Tasks = ({ size = 42, color = 'black' }: IconProps) => {
         </svg>
     )
 }
-
-export default Tasks
