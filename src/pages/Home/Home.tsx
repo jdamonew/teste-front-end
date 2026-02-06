@@ -48,6 +48,7 @@ function Home() {
     <HomeContainer>
 
       <Section id='dobra-3'>
+
         <Header>
           <TitleHeader>
             {`Na contabilidade.com,
@@ -56,6 +57,7 @@ function Home() {
             <b>R$ 159/mês</b>, já com:
           </TitleHeader>
         </Header>
+
         <BenefitsContainer>
           <img
             src={isMobile ? imgMobile : imgDesktop}
@@ -100,7 +102,7 @@ function Home() {
               {
                 cards.map(({ id, text, title, icon: Icon }) => (
                   <Card key={id}>
-                    <Card.Icon icon={Icon} size={40} color={'#2BBE41'} />
+                    <Card.Icon icon={Icon} size={42} color={'#2BBE41'} />
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{text}</Card.Text>
                   </Card>

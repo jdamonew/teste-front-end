@@ -44,7 +44,6 @@ export const ActionsContainer = styled.div`
 `
 export const BenefitsContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.background};
-    padding: ${({ theme }) => theme.spacing.lg};
     max-width: 1200px;
     width: 100%;
     display:flex;
