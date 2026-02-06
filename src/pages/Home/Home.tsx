@@ -1,7 +1,20 @@
-import { Panel } from '@/components/Panel/Panel'
-import { useBenefits } from '@/hooks/useBenefits'
+import { Panel } from '@/components/Panel/Panel';
+import { useBenefits } from '@/hooks/useBenefits';
 import { useIsMobile } from '@/hooks/useIsMobile';
-import { ActionsContainer, BenefitsContainer, CardsContainer, Carrossel, CarrosselActions, CarrosselContainer, Dot, Dots, Header, HomeContainer, Section, TitleHeader } from './Home.styles'
+import {
+  ActionsContainer,
+  BenefitsContainer,
+  CardsContainer,
+  Carrossel,
+  CarrosselActions,
+  CarrosselContainer,
+  Dot,
+  Dots,
+  Header,
+  HomeContainer,
+  Section,
+  TitleHeader,
+} from './Home.styles';
 import { Button } from '@/components/Button/Button';
 import { Card } from '@/components/Card/Card';
 
@@ -10,10 +23,12 @@ import imgMobile from '@/assets/imgdobra-mobile.png';
 import { useCards } from '@/hooks/useCards';
 import { useRef, useState } from 'react';
 import { IconButton } from '@/components/IconButton/IconButton';
-import { ChevronLeftIcon, ChevronRightIcon } from '@/components/Icons/Icons.main';
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@/components/Icons/Icons.main';
 
 function Home() {
-
   const carrosselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -46,9 +61,7 @@ function Home() {
 
   return (
     <HomeContainer>
-
-      <Section id='dobra-3'>
-
+      <Section id="dobra-3">
         <Header>
           <TitleHeader>
             {`Na contabilidade.com,
@@ -61,36 +74,33 @@ function Home() {
         <BenefitsContainer>
           <img
             src={isMobile ? imgMobile : imgDesktop}
-            loading='lazy'
-            alt='Imagem representativa de uma usuária do sistema.'
+            loading="lazy"
+            alt="Imagem representativa de uma usuária do sistema."
           />
 
-          {
-            benefits.map(({ id, variant, icon: Icon, text }) => (
-              <Panel
-                key={id}
-                fullWidth
-                variant={variant}
-                overlap={isMobile ? 30 : 12}
-                direction='right'
-              >
-                <Icon size={isMobile ? 40 : 50} />
-                <p>{text}</p>
-              </Panel>
-            ))
-          }
+          {benefits.map(({ id, variant, icon: Icon, text }) => (
+            <Panel
+              key={id}
+              fullWidth
+              variant={variant}
+              overlap={isMobile ? 30 : 12}
+              direction="right"
+            >
+              <Icon size={isMobile ? 40 : 50} />
+              <p>{text}</p>
+            </Panel>
+          ))}
         </BenefitsContainer>
 
         <ActionsContainer>
           <Button>Conheça os planos e preços</Button>
         </ActionsContainer>
-
       </Section>
 
-      <Section id='dobra-5'>
+      <Section id="dobra-5">
         <CardsContainer>
           <Header>
-            <TitleHeader textAlign='left'>
+            <TitleHeader textAlign="left">
               {`Fatores que 
               determinam quanto 
               você vai pagar `}
@@ -98,35 +108,37 @@ function Home() {
           </Header>
 
           <CarrosselContainer>
-            <Carrossel id='carrosel' ref={carrosselRef} onScroll={handleScroll}>
-              {
-                cards.map(({ id, text, title, icon: Icon }) => (
-                  <Card key={id}>
-                    <Card.Icon icon={Icon} size={42} color={'#2BBE41'} />
+            <Carrossel id="carrosel" ref={carrosselRef} onScroll={handleScroll}>
+              {cards.map(({ id, text, title, icon: Icon }) => (
+                <Card key={id}>
+                  <Card.Icon icon={Icon} size={42} color={'#2BBE41'} />
+                  <Card.Content>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{text}</Card.Text>
-                  </Card>
-                ))
-              }
+                  </Card.Content>
+                </Card>
+              ))}
             </Carrossel>
             <Dots>
               {cards.map((_, index) => (
-                <Dot
-                  key={index}
-                  active={index === activeIndex}
-                />
+                <Dot key={index} active={index === activeIndex} />
               ))}
             </Dots>
             <CarrosselActions>
-              <IconButton onClick={() => scroll('left')} icon={ChevronLeftIcon} />
-              <IconButton onClick={() => scroll('right')} icon={ChevronRightIcon} />
+              <IconButton
+                onClick={() => scroll('left')}
+                icon={ChevronLeftIcon}
+              />
+              <IconButton
+                onClick={() => scroll('right')}
+                icon={ChevronRightIcon}
+              />
             </CarrosselActions>
           </CarrosselContainer>
         </CardsContainer>
       </Section>
-
     </HomeContainer>
-  )
+  );
 }
 
 export default Home;

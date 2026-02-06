@@ -1,4 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.surface};
@@ -9,30 +15,28 @@ export const Container = styled.div`
   max-width: 280px;
   max-height: 300px;
   scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     min-width: 276px;
   }
 `;
 
-
 export const Icon = styled.div`
-  font-size: 32px;
-  margin-bottom: 12px;
-  `;
+  /* font-size: 32px; */
+`;
 
 export const Title = styled.h3`
-    color: ${({ theme }) => theme.colors.textSecondary};
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    /* max-width: 108px; */
-  `;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  font-size: 22px;
+  font-weight: 500;
+`;
 
 export const Text = styled.p`
   font-size: ${({ theme }) => theme.fontSize.md};
   color: ${({ theme }) => theme.colors.black};
   font-weight: 500;
-  margin-bottom: 16px;
+  margin: 0;
 `;
-

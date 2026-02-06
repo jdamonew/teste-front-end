@@ -1,7 +1,6 @@
-
 export interface TitleHeaderProps {
-    textAlign?: 'left' | 'right' | 'center'
+  textAlign?: 'left' | 'right' | 'center';
 }
 export interface DotProps {
-    active: boolean
+  active: boolean;
 }
