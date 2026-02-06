@@ -8,8 +8,8 @@ import type {
   CardComponent,
 } from './Card.types';
 
-const Card: CardComponent = ({ children }: CardProps) => {
-  return <CardStyles.Container>{children}</CardStyles.Container>;
+const Card: CardComponent = ({ children, ...props }: CardProps) => {
+  return <CardStyles.Container {...props}>{children}</CardStyles.Container>;
 };
 
 const Content: React.FC<{ children: React.ReactNode }> = ({ children }) => {

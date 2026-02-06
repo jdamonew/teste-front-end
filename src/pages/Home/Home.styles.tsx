@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import type { DotProps, TitleHeaderProps } from './Home.types';
+import type { TitleHeaderProps } from './Home.types';
 
 export const HomeContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
@@ -115,11 +115,11 @@ export const Dots = styled.div`
   }
 `;
 
-export const Dot = styled.span<DotProps>`
+export const Dot = styled.span<{ $active: boolean }>`
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: ${({ active }) => (active ? '#2BBE41' : '#C4C4C4')};
+  background: ${({ $active }) => ($active ? '#2BBE41' : '#C4C4C4')};
   transition: background 0.3s;
 `;
 

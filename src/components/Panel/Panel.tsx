@@ -8,7 +8,7 @@ export const Panel = styled.div<PanelProps>`
   justify-content: ${({ direction = 'center' }) => direction};
   align-items: center;
   margin-bottom: ${({ overlap = 0 }) => `-${overlap}px`};
-  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'fit-content')};
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
 
   display: flex;
   flex-direction: row;

@@ -1,5 +1,6 @@
-import { Panel } from '@/components/Panel/Panel';
+import { useRef, useState } from 'react';
 import { useBenefits } from '@/hooks/useBenefits';
+import { Panel } from '@/components/Panel/Panel';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import {
   ActionsContainer,
@@ -18,15 +19,15 @@ import {
 import { Button } from '@/components/Button/Button';
 import { Card } from '@/components/Card/Card';
 
-import imgDesktop from '@/assets/imgdobra.png';
-import imgMobile from '@/assets/imgdobra-mobile.png';
 import { useCards } from '@/hooks/useCards';
-import { useRef, useState } from 'react';
 import { IconButton } from '@/components/IconButton/IconButton';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from '@/components/Icons/Icons.main';
+
+import imgDesktop from '@/assets/imgdobra.png';
+import imgMobile from '@/assets/imgdobra-mobile.png';
 
 function Home() {
   const carrosselRef = useRef<HTMLDivElement>(null);
@@ -110,7 +111,7 @@ function Home() {
           <CarrosselContainer>
             <Carrossel id="carrosel" ref={carrosselRef} onScroll={handleScroll}>
               {cards.map(({ id, text, title, icon: Icon }) => (
-                <Card key={id}>
+                <Card key={id} data-testid='card-carrosel'>
                   <Card.Icon icon={Icon} size={42} color={'#2BBE41'} />
                   <Card.Content>
                     <Card.Title>{title}</Card.Title>
@@ -121,7 +122,7 @@ function Home() {
             </Carrossel>
             <Dots>
               {cards.map((_, index) => (
-                <Dot key={index} active={index === activeIndex} />
+                <Dot key={index} $active={index === activeIndex} />
               ))}
             </Dots>
             <CarrosselActions>
