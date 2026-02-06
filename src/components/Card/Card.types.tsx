@@ -9,6 +9,7 @@ export interface IconBaseProps {
     size?: number;
     color?: string;
 }
+
 export type IconComponent = ComponentType<IconBaseProps>;
 
 export interface CardIconProps {
