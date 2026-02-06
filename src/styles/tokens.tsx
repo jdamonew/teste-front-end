@@ -16,6 +16,8 @@ export const colors = {
 
     button: '#2B7ADF',
     hover: '#2e9aff',
+
+    icon: '#2BBE41',
 };
 
 export const fontSize = {

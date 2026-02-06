@@ -6,7 +6,7 @@ export const Panel = styled.div<PanelProps>`
     border-radius: ${({ theme }) => theme.borderRadius.lg};
     padding: ${({ theme }) => theme.spacing.lg};
     justify-content: ${({ direction = 'center' }) => direction};
-    align-items: ${({ align = 'center' }) => align};
+    align-items: center;
     margin-bottom: ${({ overlap = 0 }) => `-${overlap}px`};
     width: ${({ fullWidth }) => fullWidth ? '100%' : 'fit-content'};
     
