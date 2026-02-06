@@ -83,7 +83,7 @@ export const CarrosselContainer = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 1200px;
-    width: 50%; 
+    width: 60%; 
 
     @media (max-width: 1040px) {
         width: 100%;
@@ -99,8 +99,8 @@ export const Carrossel = styled.div`
     -webkit-overflow-scrolling: touch;
    
 
-     @media (max-width: 768px) {
-       margin-left: 40px;
+    @media (max-width: 768px) {
+        margin-left: 40px;
         margin-right: 40px;
 
   }

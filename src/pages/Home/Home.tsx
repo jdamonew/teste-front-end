@@ -9,21 +9,23 @@ import imgDesktop from '@/assets/imgdobra.png';
 import imgMobile from '@/assets/imgdobra-mobile.png';
 import { useCards } from '@/hooks/useCards';
 import { useRef, useState } from 'react';
+import { IconButton } from '@/components/IconButton/IconButton';
+import { ChevronLeftIcon, ChevronRightIcon } from '@/components/Icons/Icons.main';
 
 function Home() {
 
   const carrosselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const benefits = useBenefits()
-  const cards = useCards()
+  const benefits = useBenefits();
+  const cards = useCards();
   const isMobile = useIsMobile();
 
   function scroll(direction: 'left' | 'right') {
     const container = carrosselRef.current;
     if (!container) return;
 
-    const cardWidth = container.offsetWidth;
+    const cardWidth = container.offsetWidth - 200;
 
     container.scrollBy({
       left: direction === 'left' ? -cardWidth : cardWidth,
@@ -41,8 +43,6 @@ function Home() {
     const index = Math.round(scrollLeft / cardWidth);
     setActiveIndex(index);
   }
-
-
 
   return (
     <HomeContainer>
@@ -116,13 +116,11 @@ function Home() {
               ))}
             </Dots>
             <CarrosselActions>
-              <Button onClick={() => scroll('left')}>esquerda</Button>
-              <Button onClick={() => scroll('right')}>direita</Button>
+              <IconButton onClick={() => scroll('left')} icon={ChevronLeftIcon} />
+              <IconButton onClick={() => scroll('right')} icon={ChevronRightIcon} />
             </CarrosselActions>
           </CarrosselContainer>
         </CardsContainer>
-
-
       </Section>
 
     </HomeContainer>
