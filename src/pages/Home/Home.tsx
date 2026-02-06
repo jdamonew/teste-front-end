@@ -33,7 +33,14 @@ function Home() {
 
           {
             benefits.map(({ id, variant, icon: Icon, text }) => (
-              <Panel key={id} variant={variant} overlap={isMobile ? 30 : 12}>
+              <Panel
+                key={id}
+                fullWidth
+                variant={variant}
+                overlap={isMobile ? 30 : 12}
+                align='left'
+                direction='right'
+              >
                 <Icon size={isMobile ? 40 : 50} />
                 <p>{text}</p>
               </Panel>
@@ -44,6 +51,7 @@ function Home() {
         <ActionsContainer>
           <Button>Conheça os planos e preços</Button>
         </ActionsContainer>
+
       </Section>
 
     </HomeContainer>

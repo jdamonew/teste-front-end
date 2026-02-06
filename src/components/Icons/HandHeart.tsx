@@ -1,6 +1,6 @@
 import type { IconProps } from './Icons.types'
 
-const HandHeart = ({ size = 31, color = 'black' }: IconProps) => {
+export const HandHeart = ({ size = 31, color = 'black' }: IconProps) => {
     return (
         <svg width={size} height={size + 8} viewBox={`0 0 ${size} ${size + 8}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.96794 2.0019C11.6396 0.345291 13.974 1.01229 15.3751 2.07622C15.9497 2.51121 16.2378 2.72871 16.4064 2.72871C16.575 2.72871 16.8632 2.51121 17.4377 2.07622C18.8388 1.01229 21.1714 0.345291 23.8449 2.0019C27.3538 4.17689 28.1477 11.3471 20.0568 17.3972C18.5143 18.5499 17.744 19.1263 16.4064 19.1263C15.0688 19.1263 14.2985 18.5499 12.7579 17.3972C4.66509 11.3471 5.45896 4.17508 8.96794 2.0019Z" stroke={color} stroke-width="2" stroke-linecap="round" />
@@ -8,5 +8,3 @@ const HandHeart = ({ size = 31, color = 'black' }: IconProps) => {
             <path d="M17.3127 27.2826L25.6375 24.7252C26.3622 24.5028 27.1387 24.515 27.856 24.7601C28.5734 25.0052 29.195 25.4706 29.6322 26.09C30.301 27.0143 30.0291 28.3411 29.054 28.903L15.4331 36.7637C15.0072 37.0101 14.5356 37.1673 14.047 37.2255C13.5584 37.2838 13.0631 37.242 12.5912 37.1027L1.00027 33.6626" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>)
 }
-
-export default HandHeart;

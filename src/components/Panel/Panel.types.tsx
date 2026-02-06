@@ -6,5 +6,6 @@ export interface PanelProps {
     variant: ColorVariant,
     align?: 'left' | 'right' | 'center',
     direction?: 'left' | 'right',
-    overlap?: number
+    overlap?: number,
+    fullWidth?: boolean
 }

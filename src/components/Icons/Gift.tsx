@@ -1,6 +1,6 @@
 import type { IconProps } from './Icons.types'
 
-const Gift = ({ size = 38, color = 'black' }: IconProps) => {
+export const Gift = ({ size = 38, color = 'black' }: IconProps) => {
     return (
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2.75012 18.75V34.75C2.75012 35.8109 3.17155 36.8283 3.9217 37.5784C4.67185 38.3286 5.68926 38.75 6.75013 38.75H30.7502C31.8111 38.75 32.8285 38.3286 33.5786 37.5784C34.3288 36.8283 34.7502 35.8109 34.7502 34.75V18.75" stroke={color} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -8,5 +8,3 @@ const Gift = ({ size = 38, color = 'black' }: IconProps) => {
             <path d="M18.7501 18.75V38.75M0.75 10.75H36.7501V18.75H0.75V10.75Z" stroke={color} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>)
 }
-
-export default Gift;

@@ -1,7 +1,7 @@
 
 import type { IconProps } from './Icons.types'
 
-const PiggyCoin = ({ size = 38, color = 'black' }: IconProps) => {
+export const PiggyCoin = ({ size = 38, color = 'black' }: IconProps) => {
     return (
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_6001_24)">
@@ -22,5 +22,3 @@ const PiggyCoin = ({ size = 38, color = 'black' }: IconProps) => {
         </svg>
     )
 }
-
-export default PiggyCoin;

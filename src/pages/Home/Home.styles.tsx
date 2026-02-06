@@ -27,7 +27,10 @@ export const Section = styled.section`
     }
 `
 export const Header = styled.div`
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 export const ActionsContainer = styled.div`
     margin-top: 68px;
@@ -42,6 +45,8 @@ export const BenefitsContainer = styled.div`
     flex-direction: column;
     
     img{
+        border-top-left-radius: ${({ theme }) => theme.borderRadius.md};
+        border-bottom-left-radius: ${({ theme }) => theme.borderRadius.md};
         position: absolute;
     }
     
