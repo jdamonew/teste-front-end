@@ -24,6 +24,7 @@ describe('Teste 2 - Home', () => {
         ).toBeInTheDocument();
     });
 });
+
 describe('Teste 3 - Home', () => {
     it('Verifica se o botão de plano é clicável', () => {
         render(<Home />);
