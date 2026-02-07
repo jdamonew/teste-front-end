@@ -24,9 +24,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Icon = styled.div`
-  /* font-size: 32px; */
-`;
+export const Icon = styled.div``;
 
 export const Title = styled.h3`
   color: ${({ theme }) => theme.colors.textSecondary};
