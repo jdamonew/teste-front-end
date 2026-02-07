@@ -5,20 +5,22 @@
 | Package                                         | Version                                                               |
 | ----------------------------------------------- | --------------------------------------------------------------------  |
 | **Node (Recomendada)**                          | v20.19.0                                                              |
-| **React**                                       | v19.2.0                                                               |
+| **React**                                       | v19.2.4                                                               |
 | **Vite**                                        | v7.2.4                                                                |
 
 ## Decisões Técnicas
 
 - Para o desenvolvimento do projeto escolhi a ```Dobra 3``` e ```Dobra 5```;
 
-- A estilização do projeto foi implementado com ```styled-components``` utilizando tokens centralizados (cores e espaçamentos) via ThemeProvider, permitindo consistência visual, fácil manutenção e escalabilidade sem dependência de estilos globais não controlados. Onde faz mais sentido para um design system;
+- A estilização do projeto foi implementado com ```styled-components``` utilizando tokens centralizados (cores e espaçamentos) via ThemeProvider, permitindo consistência visual, fácil manutenção e escalabilidade sem dependência de estilos globais não controlados, fazendo mais sentido em um contexto de design system.
 
-- Para os icones, optei por não utilizar lib externa para isso. Utilizei os svgs disponibilizados pelo protótipo do figma e componentizei para ter uma utilização e importação mais limpa ao invés de assets. É um bom exemplo para utilização de icone exclusivos da empresa, caso tenha;
+- Para os icones, optei por não utilizar não utilizar bibliotecas externas. Utilizei os SVGs dfornecidos no protótipo do Figma e os componentizei para ter uma utilização e permitindo uma importação mais limpa e reutilizável, além de representar bem um cenário de ícones exclusivos da empresa;
 
-- Na criação dos componentes tentei criar de uma forma simples, mas no componente do Card, como tinha vários dados diferentes e é um componente versátil, decidi utilizar Compound Component. Ele tem uma utilização bem mais limpa, não precisa passar vários props e realizar verificações inúteis dentro do componente caso não venha alguma prop;
+- Na criação dos componentes, priorizei simplicidade e clareza. No componente do Card, por ser mais versátil e possuir múltiplas variações de conteúdo, optei pelo padrão Compound Components. Ele tem uma utilização bem mais clara, reduz a necessidade de múltiplas props e evita verificações condicionais desnecessárias dentro do componente.
 
-- Para trazer os dados de cada dobra, criei hooks onde monto um objeto com os dados que serão monstrados no front. Em uma situação real, o simples retorno dos dados mockados poderiam vir de uma requisição de Api. Assim deixa o código bem mais limpo e separa essas funções do escopo da página;
+- Para a organização dos dados exibidos em cada seção, criei hooks responsáveis por montar os objetos de dados utilizados no front-end. Em um cenário real, esses dados poderiam ser facilmente substituídos por respostas de uma API, mantendo o código mais limpo e separando a lógica de dados do escopo da página.
+
+- Para testes utilizo Jest como test runner e React Testing Library para testar componentes do ponto de vista do usuário, focando em comportamento e acessibilidade, não em implementação.
 
 
 ## 1. Instalação
@@ -47,7 +49,17 @@ yarn dev
 
 ## 3. Testes
 
-testes aqui
+ Foram realizados algums testes automatizados na pagina principal no arquivo [Home.test.tsx](\src\pages\Home\Home.test.tsx) e no componente Button, no arquivo [Button.test.tsx](\src\components\Button\Button.test.tsx).
+
+Para rodar os testes, utilize o comando abaixo:
+
+```bash
+# com npm
+npm run test
+
+# com Yarn
+yarn test
+```
 
 
 ## Eslint e Prettier
@@ -66,16 +78,6 @@ npm run lint
 yarn lint
 ```
 
-Comando para **solucionar pontos de atenção** sinalizados pelo ```Eslint```:
-
-```bash
-# com npm
-npm run lint:fix
-
-# com Yarn
-yarn lint:fix
-```
-
 ### Prettier
 
 Para formatar todos os arquivos utilizando padrões configurado nos arquivos do ```Prettier```
@@ -92,16 +94,18 @@ yarn format
 
 ```
 ├── 📁 public
+│   └── 🖼️ vite.svg
 ├── 📁 src
 │   ├── 📁 assets
 │   │   ├── 🖼️ imgdobra-mobile.png
 │   │   └── 🖼️ imgdobra.png
 │   ├── 📁 components
 │   │   ├── 📁 Button
+│   │   │   ├── 📄 Button.styles.tsx
+│   │   │   ├── 📄 Button.test.tsx
 │   │   │   ├── 📄 Button.tsx
 │   │   │   └── 📄 Button.types.tsx
 │   │   ├── 📁 Card
-│   │   │   ├── 📄 Card.main.tsx
 │   │   │   ├── 📄 Card.styles.tsx
 │   │   │   ├── 📄 Card.tsx
 │   │   │   └── 📄 Card.types.tsx
@@ -125,6 +129,7 @@ yarn format
 │   │   │   ├── 📄 Tasks.tsx
 │   │   │   └── 📄 Telemarketing.tsx
 │   │   └── 📁 Panel
+│   │       ├── 📄 Panel.styles.tsx
 │   │       ├── 📄 Panel.tsx
 │   │       └── 📄 Panel.types.tsx
 │   ├── 📁 hooks
@@ -134,6 +139,7 @@ yarn format
 │   ├── 📁 pages
 │   │   └── 📁 Home
 │   │       ├── 📄 Home.styles.tsx
+│   │       ├── 📄 Home.test.tsx
 │   │       ├── 📄 Home.tsx
 │   │       └── 📄 Home.types.tsx
 │   ├── 📁 styles
@@ -142,8 +148,11 @@ yarn format
 │   │   ├── 📄 theme.tsx
 │   │   └── 📄 tokens.tsx
 │   ├── 📁 tests
-│   │   └── 📄 Button.test.tsx
-│   └── 📄 main.tsx
+│   │   ├── 📄 fileMock.ts
+│   │   ├── 📄 setupTests.ts
+│   │   └── 📄 test-utils.tsx
+│   ├── 📄 main.tsx
+│   └── 📄 vite-env.d.ts
 ├── ⚙️ .eslintrc
 ├── ⚙️ .gitignore
 ├── ⚙️ .prettierrc
@@ -151,6 +160,7 @@ yarn format
 ├── 📝 README.md
 ├── 📄 eslint.config.js
 ├── 🌐 index.html
+├── 📄 jest.config.cjs
 ├── ⚙️ package-lock.json
 ├── ⚙️ package.json
 ├── ⚙️ tsconfig.app.json
@@ -159,4 +169,3 @@ yarn format
 ├── 📄 vite.config.ts
 └── 📦 yarn.lock
 ```
-
